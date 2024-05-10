@@ -1,0 +1,188 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #404040;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color:  #FFFFFF; /* Белый фон шапки */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container img {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #404040; /* Темно-серый цвет ссылок для контраста на белом фоне */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Зеленый цвет для выделения ключевых слов */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main .country-catalog {
+    text-align: center;
+    padding: 20px;
+}
+
+main .countries {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.country a {
+    display: block;
+    background-color: #FFFFFF; /* Белый фон карточек */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    text-decoration: none;
+    color: #404040; /* Темно-серый текст */
+}
+
+.country a:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    color:  #4CAF50; /* Зеленый цвет при наведении */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #F2F2F2; /* Светло-серый фон подвала */
+    border-top: 1px solid #eee;
+}
+
+.arrow {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color:  #4CAF50; /* Зеленый фон стрелок */
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+.arrow:hover {
+    background-color:  #4CAF50; /* Темно-зеленый цвет стрелок при наведении для контраста */
+}
+
+/* Стили для каталога туров */
+.tour-catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Стили для карточки тура */
+.tour-card {
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease-in-out; /* Обновляем для анимации всех свойств */
+    margin-bottom: 20px; /* Дополнительное пространство снизу */
+}
+
+.tour-image {
+    width: 100%;
+    height: 250px; /* Фиксированная высота для изображений */
+    object-fit: cover; /* Обрезает изображение, сохраняя пропорции */
+    border-bottom: 1px solid #eee; /* Линия для разделения изображения от текста */
+}
+
+.tour-card h2,
+.tour-card p,
+.tour-card button {
+    padding: 10px 20px;
+}
+
+.read-more {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    border-radius: 10px; /* Скругляем углы кнопки */
+    margin-left: 20px; /* Добавляем отступ от левого края */
+    margin-bottom: 15%;
+}
+
+.read-more:hover {
+    background-color: #45a049;
+}
+
+.tour-details {
+    display: none;
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+/* Стили для раскрытия полного описания тура */
+.tour-card.expanded {
+    height: auto; /* Высота карточки теперь зависит от содержимого */
+}
+
+.tour-card.expanded .tour-details {
+    display: block; /* Показать полное описание */
+}
+
+.tour-card.expanded .read-more {
+    position: relative; /* Позиционирование кнопки относительно родителя */
+    bottom: -40px; /* Смещаем кнопку вниз */
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .tour-card {
+        width: 100%;
+    }
+}

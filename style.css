@@ -1,0 +1,262 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #404040; /* Основной текст темно-серый для контраста на белом фоне */
+    background-color: #FFFFFF; /* Белый фон */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #FFFFFF; /* Белый фон шапки */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo-container img {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #404040; /* Темно-серый цвет ссылок для контраста на белом фоне */
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50; /* Зеленый цвет для выделения ключевых слов */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+main .country-catalog {
+    text-align: center;
+    padding: 20px;
+}
+
+main .countries {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.country a {
+    display: block;
+    background-color: #FFFFFF; /* Белый фон карточек */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    text-decoration: none;
+    color: #404040; /* Темно-серый текст */
+}
+
+.country a:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    color: #4CAF50; /* Зеленый цвет при наведении */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #F2F2F2; /* Светло-серый фон подвала */
+    border-top: 1px solid #eee;
+}
+
+.arrow {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4CAF50; /* Зеленый фон стрелок */
+    color: white;
+    text-decoration: none;
+    position: fixed;
+    bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.arrow-left {
+    left: 20px;
+}
+
+.arrow-right {
+    right: 20px;
+}
+
+.arrow:hover {
+    background-color: #4CAF50; /* Темно-зеленый цвет стрелок при наведении для контраста */
+}
+
+/* Стили для карточек стран */
+.country-catalog {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем карточки по горизонтали */
+}
+
+.country-card {
+    display: flex;
+    width: 50%; /* Ширина карточки 50% от ширины экрана */
+    max-width: 700px; /* Максимальная ширина карточки */
+    margin: 20px auto; /* Автоматический отступ для центрирования карточек */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #FFFFFF; /* Белый фон карточек */
+}
+
+/* Стили для изображения внутри карточек стран */
+.country-image {
+    flex: 0 0 300px; /* Фиксированная ширина изображения равная 300px */
+    height: 200px; /* Высота изображения равная 200px */
+    overflow: hidden; /* Обрезать изображение если оно выходит за рамки */
+}
+
+.country-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Обрезать изображение по размеру контейнера сохраняя аспект */
+}
+
+
+/* Стили для контента внутри карточек стран */
+.country-content {
+    padding: 20px;
+    flex: 1; /* Занимать оставшееся пространство в карточке */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.country-content h2 {
+    margin: 0 0 10px;
+}
+
+.country-content p {
+    margin: 0 0 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Дополнительные общие стили */
+body, h1, h2, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Стили для навигации и логотипа */
+.logo-container img {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #404040;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #4CAF50;
+}
+
+@media screen and (max-width: 768px) {
+    .country-card {
+        flex-direction: column; /* Вертикальное выравнивание элементов на мобильных */
+        width: 90%; /* Ширина карточки на мобильных устройствах */
+    }
+
+    .country-image, .country-content {
+        flex: 0 0 auto; /* Разрешаем карточке определять свой размер автоматически */
+    }
+
+    .country-image {
+        width: 100%; /* Изображение занимает всю ширину карточки на мобильных */
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-main{
+    padding-left: 250px; 
+    padding-right: 250px; 
+    margin-top: 40px;
+    text-align: center;
+    font-size: 25px;
+}

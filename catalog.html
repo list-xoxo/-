@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Искатели приключений</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Логотип" width="180" height="50" onclick="window.open('logo.png', '_blank');">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="catalog.html" class="active">Каталог</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск">
+        </div>
+    </header>
+    <main>
+        <section class="country-catalog">
+            <h1>Каталог стран</h1>
+            <!-- Карточка страны Египет -->
+            <div class="country-card">
+                <div class="country-image">
+                    <img src="catalog-egypt.jpg" alt="Египет">
+                </div>
+                <div class="country-content">
+                    <h2>Египет</h2>
+                    <p>Пирамиды, фараоны и красное море ждут вас.</p>
+                    <button onclick="location.href='tur-egypt.html';">Подробнее</button>
+                </div>
+            </div>
+            <!-- Карточка страны Китай -->
+            <div class="country-card">
+                <div class="country-image">
+                    <img src="catalog-china.jpg" alt="Китай">
+                </div>
+                <div class="country-content">
+                    <h2>Китай</h2>
+                    <p>Великая стена и древняя история откроются вам.</p>
+                    <button onclick="location.href='tur-china.html';">Подробнее</button>
+                </div>
+            </div>
+            <!-- Карточка страны Италия -->
+            <div class="country-card">
+                <div class="country-image">
+                    <img src="catalog-italy.jpg" alt="Италия">
+                </div>
+                <div class="country-content">
+                    <h2>Италия</h2>
+                    <p>Романтика, пицца и исторические памятники.</p>
+                    <button onclick="location.href='tur-italy.html';">Подробнее</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="footer">
+        <hr>
+        <p>&copy; 2024 Туристическая компания "Искатели приключений". Все права защищены.</p>
+    </div>
+    <a href="main.html" class="arrow arrow-left">&#8592;</a>
+    <a href="tur-egypt.html" class="arrow arrow-right">&#8594;</a>
+</body>
+</html>

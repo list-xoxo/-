@@ -1,0 +1,123 @@
+<!- Элемент каталога ->
+<!DOCTYPE html>
+<html lang="ru">
+    <link rel="stylesheet" href="tur-style.css">
+    <head>
+        <title>Искатели приключений</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Логотип" width="180" height="50"; onclick="window.open('logo.png', '_blank');">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="main.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+            </ul>
+        </nav>
+        <input type="text" placeholder="Поиск">
+    </header>
+
+    <main>
+        <div class="tour-catalog">
+            <!-- Карточка тура -->
+            <div class="tour-card">
+                <img src="tur-china1.jpg" alt="tur-china1" class="tour-image">
+                <h2>Чжуцзяцзяо - шанхайская Венеция</h2>
+                <p class="tour-description">Эта прогулка для тех, кто хочет отдохнуть от высоток и технологичности Шанхая и посмотреть на город во всех его контрастах. Вас ждёт уникальный речной район, построенный в традициях юго-восточных районов Китая. Вы прогуляетесь по старым улицам, познакомитесь с архитектурой эпохи правления династий Мин и Цин, узнаете о древнем и современном укладе жизни местных жителей.</p>
+                <button class="read-more">Читать</button>
+                <!-- Развернутое описание тура -->
+                <div class="additional-text" style="display: none;">
+                    <h2>Характеристики тура:</h2>
+                    <ul>
+                        <li>Продолжительность: 4 дня</li>
+                        <li>Тип тура: Экскурсионный</li>
+                        <li>Группа: 5-10 человек</li>
+                    </ul>
+                    <!-- Добавьте другие детали тура здесь -->
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="tur-china2.jpg" alt="tur-china2" class="tour-image">
+                <h2>Великая Китайская стена и погружение в культуру Поднебесной</h2>
+                <p class="tour-description">Китайцы говорят, что тот, кто не поднимался на Великую Китайскую стену, не был в Китае. И они правы! Вам предстоит посмотреть на горные склоны Поднебесной с высоты величайшего памятника архитектуры, прочувствовать мощь и величие Стены. А после – отправиться на дегустацию чая.</p>
+                <button class="read-more">Читать</button>
+                <!-- Развернутое описание тура -->
+                <div class="additional-text" style="display: none;">
+                    <h2>Характеристики тура:</h2>
+                    <ul>
+                        <li>Продолжительность: 4 дня</li>
+                        <li>Тип тура: Экскурсионный</li>
+                        <li>Группа: 5-10 человек</li>
+                    </ul>
+                    <!-- Добавьте другие детали тура здесь -->
+                </div>
+            </div>
+            <div class="tour-card">
+                <img src="tur-china3.jpg" alt="tur-china3" class="tour-image">
+                <h2>Тур По следам большой Панды</h2>
+                <p class="tour-description">Этот маршрут включены старый город Чэнду и природные наследия Юнеско как Статуя Будды в Лэшане, Эмэйшань, Цзючжайгоу. Путешествовать по этому маршруту и можете увидеть самые красивые природные пейзажи и можете узнать старую литературу Китая. Кроме того, можете посмотреть симпатичные панды!</p>
+                <button class="read-more">Читать</button>
+                <!-- Развернутое описание тура -->
+                <div class="additional-text" style="display: none;">
+                    <h2>Характеристики тура:</h2>
+                    <ul>
+                        <li>Продолжительность: 4 дня</li>
+                        <li>Тип тура: Экскурсионный</li>
+                        <li>Группа: 5-10 человек</li>
+                    </ul>
+                    <!-- Добавьте другие детали тура здесь -->
+                </div>
+            </div>
+            <!-- Повторите структуру выше для каждого тура -->
+        </div>
+    </main>
+
+    <div class="footer">
+        <hr>
+        <p>&copy; 2024 Туристическая компания "Искатели приключений". Все права защищены.</p>
+    </div>
+
+    <a href="tur-egypt.html" class="arrow arrow-left">&#8592;</a>
+    <a href="tur-italy.html" class="arrow arrow-right">&#8594;</a>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Находим кнопку "Читать"
+            var readMoreButtons = document.querySelectorAll('.read-more');
+    
+            // Добавляем обработчик события click на каждую кнопку "Читать"
+            readMoreButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    // Находим родительскую карточку тура
+                    var tourCard = this.closest('.tour-card');
+                    // Находим блок с дополнительным текстом
+                    var additionalText = tourCard.querySelector('.additional-text');
+    
+                    // Добавляем или удаляем класс expanded для карточки тура
+                    tourCard.classList.toggle('expanded');
+    
+                    // Если блок с дополнительным текстом скрыт, показываем его и меняем текст кнопки на "Свернуть"
+                    if (additionalText.style.display === 'none') {
+                        additionalText.style.display = 'block';
+                        this.textContent = 'Свернуть';
+                    } else {
+                        // Если блок с дополнительным текстом отображается, скрываем его и меняем текст кнопки на "Читать"
+                        additionalText.style.display = 'none';
+                        this.textContent = 'Читать';
+                    }
+                    
+                    // Перемещаем кнопку "Читать" в самый низ карточки
+                    tourCard.appendChild(this);
+                });
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
